@@ -1,16 +1,10 @@
-const webDatabase = [
-  'google.com',
-  'cats.com',
-  'flowers.com',
-  'catpictures.com',
-  'myfavoritecats.com',
-];
-
-const googleSearch = (searchInput) => {
-  const matches = webDatabase.filter((website) => {
+// function to be tested
+// it takes in a search input and the database to be tested
+const googleSearch = (searchInput, db) => {
+  const matches = db.filter((website) => {
     return website.includes(searchInput);
   });
   return matches.length > 3 ? matches.slice(0, 3) : matches;
 };
 
-console.log(googleSearch('cat'));
+module.exports = googleSearch;
